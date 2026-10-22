@@ -1,0 +1,6 @@
+{
+  "name": "Solaris - Cinematic Solar System Exploration",
+  "description": "An interactive, scroll-driven cinematic journey through our solar system powered by high-definition space video sequences and real planetary telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

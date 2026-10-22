@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Space Mono', ui-monospace, monospace;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: #030712;
+    color: #f8fafc;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #030712;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for deep space feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.5);
+  }
+}
+
+/* Atmospheric Vignette & Scrims */
+.vignette-overlay {
+  background: radial-gradient(
+    circle at center,
+    transparent 35%,
+    rgba(3, 7, 18, 0.4) 70%,
+    rgba(3, 7, 18, 0.85) 100%
+  );
+}
+
+.cinematic-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 18, 0.7) 0%,
+    rgba(3, 7, 18, 0.15) 25%,
+    rgba(3, 7, 18, 0.15) 75%,
+    rgba(3, 7, 18, 0.85) 100%
+  );
+}
+
+.radar-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* 3D Celestial Viewport & Orbital Ring Animations */
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(2deg) rotateY(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(-2deg) rotateY(2deg);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+.animate-float-3d {
+  animation: float-3d 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 28s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 38s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Pure Colorless Liquid Glass UI System */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 1px 0 rgba(255, 255, 255, 0.05),
+    0 20px 50px -15px rgba(0, 0, 0, 0.6);
+}
+
+.liquid-glass-subtle {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.liquid-glass-interactive {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-interactive:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.3),
+    0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+
